@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var messageString = "You Are Great!"
+    @State private var messageString = ""
     
     var body: some View {
         VStack {
@@ -19,9 +19,17 @@ struct ContentView: View {
                 .foregroundColor(.red)
                 .padding()
             
-            Button("Press Me") {
-                // This is the action performed when the button is pressed
-                messageString = "You are Awesome!"
+            HStack{
+                Button("Awesome") {
+                    // This is the action performed when the button is pressed
+                    messageString = "You are Awesome!"
+                }
+                .buttonStyle(.borderedProminent)
+                
+                Button("Great"){
+                    messageString = "You Are Great!"
+                }
+                .buttonStyle(.borderedProminent)
             }
         }
     }
