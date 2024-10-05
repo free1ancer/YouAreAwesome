@@ -8,26 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var messageString = "You Are Great!"
+    
     var body: some View {
         VStack {
-            Image(systemName: "swift")
-                .resizable()
-                .scaledToFit()
-//                .imageScale(.large)
-                .foregroundColor(.orange)
-                
-                .padding(.all)
-            
-            Text("You Are Awesome!")
+            Text(messageString)
                 .font(.largeTitle)
                 .fontWeight(.heavy)
                 .foregroundColor(.red)
-//              .background(.yellow)
-                .italic()
-                .padding(.all)
+                .padding()
             
+            Button("Press Me") {
+                // This is the action performed when the button is pressed
+                messageString = "You are Awesome!"
+            }
         }
-        .padding()
     }
 }
 
